@@ -33,7 +33,8 @@ UNIPA，Box，図書サービス，Webclassの自動ログイン等を実装し�
 4. `chrome://extensions/`，`edge://extensions/`へアクセス、デベロッパーモード(Chrome)オン
 5. `TokyoDenki_Utilities`フォルダ(manifest.jsonが入っているフォルダ以外はエラーを吐きます)をD&D
 6. 設定画面にて学籍番号と共通パスワードを設定
-7. ブラウザ右上の拡張機能アイコンから本拡張機能をピン止め
+7. 注意事項：学籍番号パスワードを間違えるとUNIPAがアカウントの一時ロックが起こります．
+8. ブラウザ右上の拡張機能アイコンから本拡張機能をピン止め
    ![拡張機能のピン止め](img/Screenshot01.png)
    ![拡張機能のピン止め](img/Screenshot02.png)
 
