@@ -1,0 +1,119 @@
+{
+    "name": "TokyoDenki_Utilities",
+    "description": "An extension for TDU students",
+    "version": "0.1.0",
+    "manifest_version": 3,
+    "homepage_url": "https://github.com/Kokim-electronics/TokyoDenki_Utilities",
+    "permissions": [
+        "storage",
+        "tabs",
+        "scripting",
+        "downloads",
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback",
+        "activeTab"
+    ],
+    "icons": {
+        "16": "img/icon16.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+    },
+    "action": {
+      "default_title": "Dendai",
+      "default_popup": "popup.html",
+      "default_icon":{
+        "128":"img/icon128.png"
+      }
+    },
+    "host_permissions": [
+        "https://els.sa.dendai.ac.jp/*",
+        "https://portal.sa.dendai.ac.jp/*",
+        "https://tdu.account.box.com/*",
+        "https://5683963776.swivelcloud.com/*",
+        "https://*.mrcl.dendai.ac.jp/*",
+        "https://dentime.anozon.me/*"
+    ],
+    "options_ui": {
+        "page": "options.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://els.sa.dendai.ac.jp/webclass/*"],
+            "js": ["WebClass/js/jquery-3.6.3.min.js"],
+            "run_at": "document_start"
+        },{
+            "matches": [
+                "https://els.sa.dendai.ac.jp/webclass/*",
+                "https://els.sa.dendai.ac.jp/webclass/?acs_=*",
+                "https://els.sa.dendai.ac.jp/webclass/index.php*"
+            ],
+            "exclude_matches": ["https://els.sa.dendai.ac.jp/webclass/msg_viewer.php*"],
+            "js": ["WebClass/js/mainpage.js"],
+            "css": ["WebClass/css/css.css"]
+        },{
+            "matches": ["https://els.sa.dendai.ac.jp/webclass/txtbk_frame.php*"],
+            "js": ["WebClass/js/contentsdownload.js"]
+        },{
+            "matches": ["https://els.sa.dendai.ac.jp/webclass/file_down.php*"],
+            "js": ["WebClass/js/autodownload.js"]
+        },{
+            "matches": ["https://els.sa.dendai.ac.jp/webclass/informations.php*"],
+            "exclude_matches": ["https://els.sa.dendai.ac.jp/webclass/informations.php*action=show*"],
+            "js": ["WebClass/js/autoreadinfo.js"]
+        },{
+            "matches": ["https://els.sa.dendai.ac.jp/webclass/course.php*"],
+            "js": [
+                "WebClass/js/timetrigger.js",
+                "WebClass/js/reportalert.js",
+                "WebClass/js/course.js"
+            ],
+            "css": ["WebClass/css/css.css"]
+        },{
+            "matches": ["https://els.sa.dendai.ac.jp/webclass/qstn_frame.php*"],
+            "js": ["WebClass/js/reportsearcher.js"]
+        },{
+            "matches": ["https://els.sa.dendai.ac.jp/webclass/login.php*"],
+            "js": [
+                "WebClass/js/jquery-3.6.3.min.js",
+                "WebClass/js/autologin.js"
+            ]
+        },{
+            "matches": ["https://tdu.account.box.com/login*"],
+            "js": ["TDU_Box/js/login.js"]
+        },{
+            "matches": ["https://5683963776.swivelcloud.com/sentry/saml20endpoint"],
+            "js": ["TDU_Box/js/saml20endpoint.js"]
+        },{
+            "matches": ["https://5683963776.swivelcloud.com/sentry/usernameSubmission"],
+            "js": ["TDU_Box/js/usernameSubmission.js"]
+        },{
+            "exclude_matches": ["https://portal.sa.dendai.ac.jp/uprx/up/pk/pky001/Pky00101.xhtml"],
+            "matches": ["https://portal.sa.dendai.ac.jp/*"],
+            "js": [
+                "DENDAI_UNIPA/js/jquery-3.6.0.min.js",
+                "DENDAI_UNIPA/js/autologin.js",
+                "DENDAI_UNIPA/js/tt.js",
+                "DENDAI_UNIPA/js/bbs.js"
+            ],
+            "css": ["DENDAI_UNIPA/css/tt.css"]
+        },{
+            "matches": ["https://portal.sa.dendai.ac.jp/uprx/up/pk/pky001/Pky00101.xhtml"],
+            "js": [
+                "DENDAI_UNIPA/js/jquery-3.6.0.min.js",
+                "DENDAI_UNIPA/js/autologin.js",
+                "DENDAI_UNIPA/js/bbs2.js"
+            ]
+        },{
+            "matches": ["https://*.mrcl.dendai.ac.jp/*"],
+            "js": ["tdu_lib/js/login-do.js"]
+        },
+        {
+            "matches": ["https://dentime.anozon.me/*"],
+            "css": ["dentime/dentime.css"],
+            "js": ["dentime/dentime.js"]
+          }
+    ]
+}
