@@ -14,7 +14,7 @@
       poph = 385;
     }else {
        popp = 'https://dentime.anozon.me/p/tdu/tdu';
-        poph = 540;
+        poph = 400;//540;
     }
     var popn = null;
     var popx = (screen.availWidth - popw*0) / 1;
