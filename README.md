@@ -1,4 +1,4 @@
-## TokyoDenki_Utilities-v0.1.0
+## TokyoDenki_Utilities-v0.1.1
 
 UNIPA，Box，図書サービス，Webclassの自動ログイン等を実装しました．また，ポップアップから各ページへとアクセスしやすくしました．さらにポップアップから[Dentime](https://dentime.anozon.me)にアクセスできるようにしました．
 
