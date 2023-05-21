@@ -42,7 +42,7 @@
     "content_scripts": [
         {
             "matches": ["https://els.sa.dendai.ac.jp/webclass/*"],
-            "js": ["WebClass/js/jquery-3.6.3.min.js"],
+            "js": ["jquery-3.7.0.min.js"],
             "run_at": "document_start"
         },{
             "matches": [
@@ -77,7 +77,7 @@
         },{
             "matches": ["https://els.sa.dendai.ac.jp/webclass/login.php*"],
             "js": [
-                "WebClass/js/jquery-3.6.3.min.js",
+                "jquery-3.7.0.min.js",
                 "WebClass/js/autologin.js"
             ]
         },{
@@ -93,7 +93,7 @@
             "exclude_matches": ["https://portal.sa.dendai.ac.jp/uprx/up/pk/pky001/Pky00101.xhtml"],
             "matches": ["https://portal.sa.dendai.ac.jp/*"],
             "js": [
-                "DENDAI_UNIPA/js/jquery-3.6.0.min.js",
+                "jquery-3.7.0.min.js",
                 "DENDAI_UNIPA/js/autologin.js",
                 "DENDAI_UNIPA/js/tt.js",
                 "DENDAI_UNIPA/js/bbs.js"
@@ -102,7 +102,7 @@
         },{
             "matches": ["https://portal.sa.dendai.ac.jp/uprx/up/pk/pky001/Pky00101.xhtml"],
             "js": [
-                "DENDAI_UNIPA/js/jquery-3.6.0.min.js",
+                "jquery-3.7.0.min.js",
                 "DENDAI_UNIPA/js/autologin.js",
                 "DENDAI_UNIPA/js/bbs2.js"
             ]
