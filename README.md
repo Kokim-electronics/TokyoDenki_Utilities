@@ -1,4 +1,4 @@
-﻿## TokyoDenki_Utilities-v0.2.0
+﻿## TokyoDenki_Utilities-v0.3.0
 
 UNIPA，Box，図書サービス，Webclassの自動ログイン等を実装しました．また，ポップアップから各ページへとアクセスしやすくしました．さらにポップアップから[Dentime](https://dentime.anozon.me)にアクセスできるようにしました．
 
@@ -29,12 +29,12 @@ UNIPA，Box，図書サービス，Webclassの自動ログイン等を実装し�
 参考 : <br>[カスタムの Chrome アプリと拡張機能を作成して公開する - Chrome Enterprise and Education ヘルプ](https://support.google.com/chrome/a/answer/2714278?hl=ja)
 
 1. [TokyoDenki_Utilities](https://github.com/Kokim-electronics/TokyoDenki_Utilities/releases)から`Assets - TokyoDenki_Utilities-vx.x.x.zip`をDL
-3. 解凍し`TokyoDenki_Utilities`フォルダを`Users/Document`などに移動する
-4. `chrome://extensions/`，`edge://extensions/`へアクセス、デベロッパーモード(Chrome)オン
-5. `TokyoDenki_Utilities`フォルダ(manifest.jsonが入っているフォルダ以外はエラーを吐きます)をD&D
-6. 設定画面にて学籍番号と共通パスワードを設定
-7. 注意事項：学籍番号パスワードを間違えるとUNIPAがアカウントの一時ロックが起こります．
-8. ブラウザ右上の拡張機能アイコンから本拡張機能をピン止め
+2. 解凍し`TokyoDenki_Utilities`フォルダを`Users/Document`などに移動する
+3. `chrome://extensions/`，`edge://extensions/`へアクセス、デベロッパーモード(Chrome)オン
+4. `TokyoDenki_Utilities`フォルダ(manifest.jsonが入っているフォルダ以外はエラーを吐きます)をD&D
+5. 設定画面にて学籍番号と共通パスワードを設定
+6. 注意事項：学籍番号やパスワードを間違えるとUNIPAがアカウントの一時ロックが起こります．
+7. ブラウザ右上の拡張機能アイコンから本拡張機能をピン止め
    ![拡張機能のピン止め](img/Screenshot01.png)
    ![拡張機能のピン止め](img/Screenshot02.png)
 
@@ -43,4 +43,4 @@ UNIPA，Box，図書サービス，Webclassの自動ログイン等を実装し�
 BearOffice/WebClass-Extension: ウェブクラス(WebClass)の利便性を向上できるChrome拡張機能． https://github.com/BearOffice/WebClass-Extension 
 a01sa01to/WebClass-PreventDL:埼玉大学生向けChrome拡張機能． https://github.com/a01sa01to/WebClass-PreventDL
 
-最終更新日:2023/05/19 17:00
+最終更新日:2023/05/23 14:00
