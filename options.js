@@ -39,24 +39,23 @@ chrome.storage.local.get(function (item) {
   $("#uido_id").val(item.uido_id);
   $("#uido_pass").val(item.uido_pass);
 
-  if (item.gakki != undefined) {
-    document.getElementById("5th").checked = item.tf_5th;
-    document.getElementById("6th").checked = item.tf_6th;
-    document.getElementById("7th").checked = item.tf_7th;
-    document.getElementById("sat").checked = item.tf_sat;
-    document.getElementById("mon").checked = item.tf_mon;
-    document.getElementById("tue").checked = item.tf_tue;
-    document.getElementById("wed").checked = item.tf_wed;
-    document.getElementById("thu").checked = item.tf_thu;
-    document.getElementById("fri").checked = item.tf_fri;
-  }
+  document.getElementById("5th").checked = item.tf_5th;
+  document.getElementById("6th").checked = item.tf_6th;
+  document.getElementById("7th").checked = item.tf_7th;
+  document.getElementById("sat").checked = item.tf_sat;
+  document.getElementById("mon").checked = item.tf_mon;
+  document.getElementById("tue").checked = item.tf_tue;
+  document.getElementById("wed").checked = item.tf_wed;
+  document.getElementById("thu").checked = item.tf_thu;
+  document.getElementById("fri").checked = item.tf_fri;
   $("#kamokuary").val(item.kamoku)
+
 });
 
 function getNow() {
   var now = new Date();
   var year = now.getFullYear();
-  var mon = now.getMonth()+1; //?��を足すこと
+  var mon = now.getMonth()+1; //１を足すこと
   var day = now.getDate();
   var hour = now.getHours();
   var min = now.getMinutes();
@@ -65,3 +64,17 @@ function getNow() {
   var s = hour + ":" + min + ":" + sec + ""; 
   return s;
 }
+
+document.getElementById("buttonEye").addEventListener("click", pushHideButton);
+
+function pushHideButton() {
+    var txtPass = document.getElementById("uido_pass");
+    var btnEye = document.getElementById("buttonEye");
+    if (txtPass.type === "text") {
+      txtPass.type = "password";
+      btnEye.className = "fa fa-eye";
+    } else {
+      txtPass.type = "text";
+      btnEye.className = "fa fa-eye-slash";
+    }
+  }

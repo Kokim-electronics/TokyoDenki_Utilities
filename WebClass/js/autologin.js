@@ -18,5 +18,11 @@ $(window).on('load', function () {
 chrome.storage.local.get(function (item) {
     document.getElementById("username").value = item.uido_id.substr(0, item.uido_id.indexOf('@'));
     document.getElementById("password").value = item.uido_pass;
-    document.getElementById("LoginBtn").click();
+    if (document.querySelectorAll(".alert.alert-warning")[0] == undefined){
+        document.getElementById("LoginBtn").click();
+    }
+    else {
+        alert("【拡張機能のエラー】\nログインに失敗しました。\n拡張機能のオプションを確認した後，手動でログインしてください。");
+    }
+    
 });

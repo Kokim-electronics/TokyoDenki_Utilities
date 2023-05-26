@@ -4,15 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <title>WebClass Extension 設定</title>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <style>
+        #uido_pass {
+          border: none; /* デフォルトの枠線を消す */
+        }
+        #fieldPassword {
+          border-width: thin;
+          border-style: solid;
+          width: 210px;
+        }
+      </style>
 </head>
 
 <body>
     <p>
         <fieldset>
             <legend>共通パスワード</legend>
-            <input type="text" id="uido_id" name="uido_id" size="35" placeholder="01kc999@ms.dendai.ac.jp"><br>
+            <input type="text" id="uido_id" name="uido_id" size="25" placeholder="01kc999@ms.dendai.ac.jp"><br>
             <!--<input type="text" id="uido_id" name="uido_id" size="7" placeholder="01kc999">-->
-            <input type="password" id="uido_pass" name="uido_pass" size="35" placeholder="共通パスワード"><br>
+            <form id="fieldPassword">
+                <input type="password" id="uido_pass" name="uido_pass" size="22" placeholder="共通パスワード">
+                <span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
+            </form>
         </fieldset>
         <br>
 
