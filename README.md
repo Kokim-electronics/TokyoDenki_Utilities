@@ -45,4 +45,4 @@ v0.3.0からの変更点 - Webclass，UNIPAでのパスワード誤り時の動�
 BearOffice/WebClass-Extension: ウェブクラス(WebClass)の利便性を向上できるChrome拡張機能． https://github.com/BearOffice/WebClass-Extension 
 a01sa01to/WebClass-PreventDL:埼玉大学生向けChrome拡張機能． https://github.com/a01sa01to/WebClass-PreventDL
 
-最終更新日:2023/05/23 14:00
+最終更新日:2023/05/26 11:30
