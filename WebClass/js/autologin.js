@@ -7,7 +7,7 @@
 // chrome.runtime.sendMessage will also interrupt the login process.
 /*
 $(window).on('load', function () {
-    var loginjs = '<script>var autologin = $("<div class=\'loginFeedback\'><p>閾ｪ蜍輔Ο繧ｰ繧､繝ｳ荳ｭ縺ｧ縺吶� <img src=\'./images/loading.gif\' /></p></div>");'
+    var loginjs = '<script>var autologin = $("<div class=\'loginFeedback\'><p>自動ログイン中です。 <img src=\'./images/loading.gif\' /></p></div>");'
         + '$.overlay({object: autologin}); $.showOverlay({ speed: 150, callback: function(){} });'
         + 'setTimeout(function(){$(document.login).trigger("submit")},200);<\/script>';
     $('body').append(loginjs);
@@ -22,7 +22,7 @@ chrome.storage.local.get(function (item) {
         document.getElementById("LoginBtn").click();
     }
     else {
-        alert("【拡張機能のエラー】\nログインに失敗しました。\n拡張機能のオプションを確認した後，手動でログインしてください。");
+       alert("【拡張機能のエラー】\nログインに失敗しました。\n拡張機能のオプションを確認した後，手動でログインしてください。");
     }
     
 });

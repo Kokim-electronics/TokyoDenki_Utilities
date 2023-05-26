@@ -8,15 +8,25 @@
 
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 body{
-width:200px;
+width:150px;
 font-family: 'Noto Sans JP', sans-serif;
 }
 .d_link{
-    color: #2d56a0;
-    font-size: 19px;
+  color: #2d56a0;
+  font-size: 18px;
 }
-p{
-margin:0;
+
+/*https://photoshopvip.net/133583*/
+a {
+  box-shadow: inset 0 0 0 0 #2d56a0;
+  color: #2d56a0;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+a:hover {
+  color: #fff;
+  box-shadow: inset 200px 0 0 0 #2d56a0;
 }
 </style>
 </head>
@@ -24,14 +34,13 @@ margin:0;
 <body>
   <center>
   <a class="d_link" href="https://tdu.account.box.com/login" target="null">Box</a><br>
-  <a class="d_link" href="https://portal.sa.dendai.ac.jp/" target="null"><p><span>UNIPA</span></p></a>
+  <a class="d_link" href="https://portal.sa.dendai.ac.jp/" target="null">UNIPA</a><br>
   <a class="d_link" href="https://outlook.office.com/mail/" target="_blank">Outlook</a><br>
   <a class="d_link" href="https://dentime.anozon.me/p/tdu" target="_blank">Dentime</a><br>
   <a class="d_link" href="https://els.sa.dendai.ac.jp/webclass/login.php" target="null">WebClass</a><br>
   <a class="d_link" href="https://lib.mrcl.dendai.ac.jp/webopac/login.do" target="_blank">図書サービス</a><br>
   <a class="d_link" href="https://prtlog2.prt2.ms.dendai.ac.jp/User/Print/WebPrint/Print" target="_blank">Webプリント</a><br>
-  <a class="d_link" href="https://www.dendai.ac.jp/about/career/gakunai/index.html" target="_blank">キャリア専用サイト</a><br>
+  <a class="d_link" href="https://www.dendai.ac.jp/about/career/gakunai/index.html" target="_blank">就職・キャリア</a><br>
   </center>
-
 </body>
 </html>
