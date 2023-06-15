@@ -1,7 +1,7 @@
-{
+﻿{
     "name": "TokyoDenki_Utilities",
     "description": "An extension for TDU students",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "manifest_version": 3,
     "homepage_url": "https://github.com/Kokim-electronics/TokyoDenki_Utilities",
     "permissions": [
@@ -31,7 +31,10 @@
         "https://tdu.account.box.com/*",
         "https://5683963776.swivelcloud.com/*",
         "https://*.mrcl.dendai.ac.jp/*",
-        "https://dentime.anozon.me/*"
+        "https://dentime.anozon.me/*",
+        "https://*.ntwk.dendai.ac.jp/*",
+        "https://prtlog2.prt2.ms.dendai.ac.jp/*",
+        "https://www2.kyujin-navi.com/*"
     ],
     "options_ui": {
         "page": "options.html"
@@ -114,6 +117,15 @@
             "matches": ["https://dentime.anozon.me/*"],
             "css": ["dentime/dentime.css"],
             "js": ["dentime/dentime.js"]
-          }
+        },{
+            "matches": ["https://auth-wlc.ntwk.dendai.ac.jp/login.html*"],
+            "js": ["ntwk_dendai/js/TDU_MRCL_WLAN.js"]
+        },{
+            "matches": ["https://prtlog2.prt2.ms.dendai.ac.jp/Login/*"],
+            "js": ["prtlog2/js/prtlog2.js"]
+        },{
+            "matches": ["https://www2.kyujin-navi.com/GAKUGAI/*"],
+            "js": ["kyujin-navi/js/kyujin-navi.js"]
+        }
     ]
 }
