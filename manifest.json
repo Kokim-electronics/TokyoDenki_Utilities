@@ -1,7 +1,7 @@
 ﻿{
     "name": "TokyoDenki_Utilities",
     "description": "An extension for TDU students",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "manifest_version": 3,
     "homepage_url": "https://github.com/Kokim-electronics/TokyoDenki_Utilities",
     "permissions": [

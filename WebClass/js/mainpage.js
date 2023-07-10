@@ -102,50 +102,17 @@ $('.course-webclass').html('WebClass&nbsp;&nbsp;' + egg[Math.floor(Math.random()
 //# sourceMappingURL=mainpage.js.map
 
 chrome.storage.local.get(function (item) {
-  if (item.tf_5th) {
-    document.querySelectorAll("tr")[5].style.display = "none";
-  }
-  if (item.tf_6th) {
-    document.querySelectorAll("tr")[6].style.display = "none";
-  }
-  if (item.tf_7th) {
-    document.querySelectorAll("tr")[7].style.display = "none";
-  }
-  if (item.tf_mon) {
-    document.querySelectorAll("tr th")[1].style.display = "none";
-    for (var n=1;n<=7;n++){
-      document.querySelectorAll("tr")[n].children[1].style.display = "none";
+  for (let n = 1; n < 8; n++){
+    if (item.tf_period[n]) {
+      document.querySelectorAll("tr")[n].style.display = "none";
     }
   }
-  if (item.tf_tue) {
-    document.querySelectorAll("tr th")[2].style.display = "none";
-    for (var n=1;n<=7;n++){
-      document.querySelectorAll("tr")[n].children[2].style.display = "none";
+  for (let n = 1; n < 7; n++){
+    if (item.tf_date[n]) {
+      document.querySelectorAll("tr th")[n].style.display = "none";
+      for (var m = 1; m <= 7; m++){
+        document.querySelectorAll("tr")[m].children[n].style.display = "none";
+      }
     }
   }
-  if (item.tf_wed) {
-    document.querySelectorAll("tr th")[3].style.display = "none";
-    for (var n=1;n<=7;n++){
-      document.querySelectorAll("tr")[n].children[3].style.display = "none";
-    }
-  }
-  if (item.tf_thu) {
-    document.querySelectorAll("tr th")[4].style.display = "none";
-    for (var n=1;n<=7;n++){
-      document.querySelectorAll("tr")[n].children[4].style.display = "none";
-    }
-  }
-  if (item.tf_fri) {
-    document.querySelectorAll("tr th")[5].style.display = "none";
-    for (var n=1;n<=7;n++){
-      document.querySelectorAll("tr")[n].children[5].style.display = "none";
-    }
-  }
-  if (item.tf_sat) {
-    document.querySelectorAll("tr th")[6].style.display = "none";
-    for (var n=1;n<=7;n++){
-      document.querySelectorAll("tr")[n].children[6].style.display = "none";
-    }
-  }
-
 });
