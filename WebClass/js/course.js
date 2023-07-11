@@ -1,11 +1,9 @@
 ﻿function collapse() {
     var ph = document.getElementsByClassName('panel-heading');
-
     var contentsList = document.querySelectorAll(".panel.panel-default.cl-contentsList_folder");
 
     for (let index = 0; index < contentsList.length; index++) {
         var id_tmp = contentsList[index].id
-        //console.log(id_tmp);
         contentsList[index].id = "folder-id" + index;
 
         // 新しいHTML要素を作成
@@ -24,24 +22,17 @@
         contentsList_2.replaceWith(details_element);
         contentsList_2.id = "ph-id" + index;
 
-        /*==============================================================*/
-
         let ph_element = document.createElement('summary');
         clone = document.querySelector(`#ph-id` + index).cloneNode(true);
-
         ph_element.appendChild(clone.children[0]);
         ph_element.classList.add("panel-heading");
 
         if (syoki_tf){ 
           ph_element.children[0].textContent = "－　" + ph_element.children[0].textContent.slice(2);
         }else{
-          ph_element.children[0].textContent = "－　" + ph_element.children[0].textContent;
-          
+          ph_element.children[0].textContent = "－　" + ph_element.children[0].textContent; 
         }
-
-
         ph_element.id = "sum-id" + index
-
         ph_element.setAttribute("onclick","if(this.parentNode.open){this.children[0].textContent='＋　' + this.children[0].textContent.slice(2)}else{this.children[0].textContent='－　' + this.children[0].textContent.slice(2)}");
 
         var ph_div2 = document.querySelector('#ph-id' + index);
@@ -53,7 +44,6 @@
 
 function expand() {
     var ph = document.getElementsByClassName('panel-heading');
-
     var contentsList = document.querySelectorAll(".panel.panel-default.cl-contentsList_folder");
 
     for (let index = 0; index < contentsList.length; index++) {
@@ -75,30 +65,21 @@ function expand() {
         contentsList_2.replaceWith(details_element);
         contentsList_2.id = "ph-id" + index;
 
-        /*==============================================================*/
-
         let ph_element = document.createElement('summary'); //div');
         clone = document.querySelector(`#ph-id` + index).cloneNode(true);
-
         ph_element.appendChild(clone.children[0]);
         ph_element.classList.add("panel-heading");
 
+        /*
         if (syoki_tf){ 
           ph_element.children[0].textContent = "－　" + ph_element.children[0].textContent.slice(2);
         }else{
           ph_element.children[0].textContent = "－　" + ph_element.children[0].textContent;
-          
-        }
-
-
-        //if (ph_element.children[0].textContent.endsWith("< 格納 >")){ 
+        }*/
 
         ph_element.children[0].textContent = "＋　" + ph_element.children[0].textContent.slice(2);
         ph_element.id = "sum-id" + index
-
         ph_element.setAttribute("onclick","if(this.parentNode.open){this.children[0].textContent='＋　' + this.children[0].textContent.slice(2)}else{this.children[0].textContent='－　' + this.children[0].textContent.slice(2)}");
-
-
 
         // ph_element.children[0].textContent = ph_element.children[0].textContent.slice(0,-6)
         // ph_element.id = "sum-id" + index;}
@@ -106,8 +87,6 @@ function expand() {
         var ph_div2 = document.querySelector('#ph-id' + index);
         ph_div2.replaceWith(ph_element);
         document.querySelectorAll("details")[index].id = id_tmp;
-
-
     }
     syoki_tf=true;
 

@@ -4,8 +4,10 @@
 var infobox = $('#NewestInformations');
 var title = $('#UserTopInfo .page-header');
 //title.text('管理者からのお知らせ　 < クリックして格納 >');
+
 // Collapse the notifications
 switchInfoboxVisibility();
+
 // Append the notifications if there are any unread messages
 /*$(window).on('load', function () {
     // js-unread-message-count is updated by ajax, can't catch the updated timing
@@ -16,9 +18,11 @@ switchInfoboxVisibility();
         }
     }, 200);
 });*/
+
 $('#UserTopInfo .page-header').on('click', function () {
     switchInfoboxVisibility();
 });
+
 function switchInfoboxVisibility() {
     if (infobox.is(':visible') == true) {
         infobox.hide();
@@ -38,12 +42,11 @@ $('.side-block-title')[0].id = "gakushutitle";
 var gakushucontent = $('#gakusyucontent');
 var gakushutitle = $('#gakushutitle');
 switchInfoboxVisibilitygakushu()//gakushucontent.hide();
-//gakushutitle.text('学習と振り返りの記録　 > クリックして展開 <');
-// Collapse the notifications
-//switchInfoboxVisibilitygakushu();
+
 $('#gakushutitle').on('click', function () {
     switchInfoboxVisibilitygakushu();
 });
+
 function switchInfoboxVisibilitygakushu() {
     if (gakushucontent.is(':visible') == true) {
         $('.side-block-content')[0].style.display ="none";
@@ -54,7 +57,7 @@ function switchInfoboxVisibilitygakushu() {
         $('.side-block-content')[0].style.display ="";
         gakushutitle.text('学習と振り返りの記録　 < クリックして格納 >');
     }
-}//$('.side-block-content')[0].style.display ="none";
+}
 /***********学習と振り返りの記録部分***********/
 
 /***********電子ポートフォリオ部分***********/
@@ -63,13 +66,12 @@ $('.side-block-title')[1].id = "portfoliotitle";
 var portfoliocontent = $('#portfoliocontent');
 var portfoliotitle = $('#portfoliotitle');
 switchInfoboxVisibilityportfolio()//gakushucontent.hide();
-//gakushutitle.text('電子ポートフォリオ　 > クリックして展開 <');
-// Collapse the notifications
-//switchInfoboxVisibilitygakushu();
+
 $('#portfoliotitle').on('click', function () {
     window.location.href = "/webclass/ip_mods.php/addon/tdu/plugin/portfolio/main";
     //switchInfoboxVisibilityportfolio();
 });
+
 function switchInfoboxVisibilityportfolio() {
     if (portfoliocontent.is(':visible') == true) {
         $('.side-block-content')[1].style.display ="none";
@@ -82,7 +84,7 @@ function switchInfoboxVisibilityportfolio() {
         $('.side-block-content')[1].style.display ="";
         portfoliotitle.text('電子ポートフォリオ　 < クリックして格納 >');
     }
-}//$('.side-block-content')[0].style.display ="none";
+}
 /***********電子ポートフォリオ部分***********/
 
 // Arrange the row
@@ -90,8 +92,7 @@ $('.row > div').each(function (_, elem) {
     $(elem).removeAttr('class');
 });
 // Easter egg
-/*
-var egg = ['(。・・)_旦', 'Σ(ﾟдﾟlll)', '(±.±)', '(ヾ;￣ω￣)ヾﾔﾚﾔﾚ',
+/*let egg = ['(。・・)_旦', 'Σ(ﾟдﾟlll)', '(±.±)', '(ヾ;￣ω￣)ヾﾔﾚﾔﾚ',
     '┐(￣～￣)┌', '(-Д-＼)=３', '！(。_。)アレレ'];
 $('.course-webclass').html('WebClass&nbsp;&nbsp;' + egg[Math.floor(Math.random() * egg.length)]);
 */

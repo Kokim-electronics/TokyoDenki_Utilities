@@ -20,7 +20,6 @@ if (document.getElementsByClassName("innerInfo")[0] != undefined) {
     }
 }
 
-if (document.querySelectorAll("[control-id=ControlID-1]")[0] != undefined) {
-    document.querySelectorAll("[control-id=ControlID-1]")[0].click
-
+if (document.querySelectorAll("[control-id=ControlID-1]")[0] != undefined) { 
+    document.querySelectorAll("[control-id=ControlID-1]")[0].click();
 }

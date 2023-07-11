@@ -24,7 +24,6 @@ if (element[0] != undefined) {
 }
 
 element = document.getElementsByClassName("show_center");
-console.log(element[0]);
 if (element[0] != undefined) {
     element[0].click();
 }
