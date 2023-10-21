@@ -54,4 +54,4 @@ v0.8.0からの変更点 - 動作しない機能の確認と修正
 [BearOffice/WebClass-Extension](https://github.com/BearOffice/WebClass-Extension): ウェブクラス(WebClass)の利便性を向上できるChrome拡張機能． 
 [a01sa01to/WebClass-PreventDL](https://github.com/a01sa01to/WebClass-PreventDL):埼玉大学生向けChrome拡張機能． 
 
-最終更新日:2023/09/29 12:50
+最終更新日:2023/10/21 13:10
