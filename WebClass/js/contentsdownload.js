@@ -14,12 +14,12 @@ contentsframe.on('load', function () {
         /*
         framebody_1.append('<font color="black">| このページの<b>ファイル(PDFなど)</b>を' +
             '<input type="button" id="downloadbtn" value="ダウンロード" class="btn btn-default"></font>');
-        */
+        
         // Regist onclick event   [Option:DOMSubtreeModified propertychange]
         framebody_1.find('#downloadbtn').on('click', function () {
             var fileurl = framebody_1.find('a').attr('href');
             chrome.runtime.sendMessage({ type: 'download', filename: chaptername, url: fileurl });
-        });
+        });*/
     }
 });
 //# sourceMappingURL=contentsdownload.js.map

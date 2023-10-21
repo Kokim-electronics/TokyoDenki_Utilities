@@ -1,41 +1,9 @@
-﻿/* 5限
-tr:nth-child(5){
-    display: none
-}*/
-
-/* 二部生はコメントアウト */
-/*6,7限
-tr:nth-child(6){
-    display: none
-}tr:nth-child(7){
-    display: none
-}*/
-/*8,9限*/
+﻿/*8,9限*/
 tr:nth-child(8){
     display: none
 }tr:nth-child(9){
     display: none
 }
-
-/*土曜
-tr th:nth-child(7){
-    display: none
-}
-tr:nth-child(1) td:nth-child(7){
-    display: none;
-}tr:nth-child(2) td:nth-child(7){
-    display: none;
-}tr:nth-child(3) td:nth-child(7){
-    display: none;
-}tr:nth-child(4) td:nth-child(7){
-    display: none;
-}tr:nth-child(5) td:nth-child(7){
-    display: none;
-}tr:nth-child(6) td:nth-child(7){
-    display: none;
-}tr:nth-child(7) td:nth-child(7){
-    display: none;
-}*/
 
 /*日曜*/
 tr th:nth-child(8){
@@ -56,9 +24,6 @@ tr th:nth-child(8){
     display: none;
 }
 
-
-
-
 /*電子ポートフォリオ
 #View-1 .side-block {
     display: none;
@@ -68,11 +33,6 @@ tr th:nth-child(8){
 .hidden-xs:nth-of-type(4) {
     display: none
 }
-/*管理者*/
-
-/*#UserTopInfo {
-    display: none
-}*/
 
 /*表示する学期　時間割　その他のコース*/
 .form-inline > h4 {
@@ -121,7 +81,6 @@ tr th:nth-child(8){
 a.disabled2{
     pointer-events: none;
 }
-
 
 /* ホバー時のスタイル */
 summary:hover {

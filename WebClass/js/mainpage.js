@@ -3,13 +3,11 @@
 /***********管理者からのお知らせ部分***********/
 var infobox = $('#NewestInformations');
 var title = $('#UserTopInfo .page-header');
-//title.text('管理者からのお知らせ　 < クリックして格納 >');
-
+title.text('管理者からのお知らせ　 < クリックして格納 >');
 // Collapse the notifications
 switchInfoboxVisibility();
-
 // Append the notifications if there are any unread messages
-/*$(window).on('load', function () {
+$(window).on('load', function () {
     // js-unread-message-count is updated by ajax, can't catch the updated timing
     setTimeout(function () {
         var value = $('#js-unread-message-count').text();
@@ -17,12 +15,10 @@ switchInfoboxVisibility();
             switchInfoboxVisibility();
         }
     }, 200);
-});*/
-
+});
 $('#UserTopInfo .page-header').on('click', function () {
     switchInfoboxVisibility();
 });
-
 function switchInfoboxVisibility() {
     if (infobox.is(':visible') == true) {
         infobox.hide();
@@ -37,11 +33,13 @@ function switchInfoboxVisibility() {
 /***********管理者からのお知らせ部分***********/
 
 /***********学習と振り返りの記録部分***********/
+if ($('.side-block-content')[0] != undefined) {//$('.side-block-content')[0]){
 $('.side-block-content')[0].id = "gakusyucontent";
 $('.side-block-title')[0].id = "gakushutitle";
 var gakushucontent = $('#gakusyucontent');
 var gakushutitle = $('#gakushutitle');
 switchInfoboxVisibilitygakushu()//gakushucontent.hide();
+}
 
 $('#gakushutitle').on('click', function () {
     switchInfoboxVisibilitygakushu();
@@ -61,11 +59,13 @@ function switchInfoboxVisibilitygakushu() {
 /***********学習と振り返りの記録部分***********/
 
 /***********電子ポートフォリオ部分***********/
+if($('.side-block-content')[1] != undefined){
 $('.side-block-content')[1].id = "portfoliocontent";
 $('.side-block-title')[1].id = "portfoliotitle";
 var portfoliocontent = $('#portfoliocontent');
 var portfoliotitle = $('#portfoliotitle');
 switchInfoboxVisibilityportfolio()//gakushucontent.hide();
+}
 
 $('#portfoliotitle').on('click', function () {
     window.location.href = "/webclass/ip_mods.php/addon/tdu/plugin/portfolio/main";
@@ -92,7 +92,7 @@ $('.row > div').each(function (_, elem) {
     $(elem).removeAttr('class');
 });
 // Easter egg
-/*let egg = ['(。・・)_旦', 'Σ(ﾟдﾟlll)', '(±.±)', '(ヾ;￣ω￣)ヾﾔﾚﾔﾚ',
+/*var egg = ['(。・・)_旦', 'Σ(ﾟдﾟlll)', '(±.±)', '(ヾ;￣ω￣)ヾﾔﾚﾔﾚ',
     '┐(￣～￣)┌', '(-Д-＼)=３', '！(。_。)アレレ'];
 $('.course-webclass').html('WebClass&nbsp;&nbsp;' + egg[Math.floor(Math.random() * egg.length)]);
 */
@@ -102,6 +102,7 @@ $('.course-webclass').html('WebClass&nbsp;&nbsp;' + egg[Math.floor(Math.random()
 //    'src=""></iframe></div>');
 //# sourceMappingURL=mainpage.js.map
 
+if(document.getElementsByClassName("page-header")[1]!=undefined){
 chrome.storage.local.get(function (item) {
   for (let n = 1; n < 8; n++){
     if (item.tf_period[n]) {
@@ -117,3 +118,4 @@ chrome.storage.local.get(function (item) {
     }
   }
 });
+}

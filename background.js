@@ -3,11 +3,6 @@ importScripts("WebClass/js/timetrigger.js");
 // Initialize
 chrome.runtime.onInstalled.addListener(function () {
     chrome.tabs.create({ 'url': 'chrome://extensions/?options=' + chrome.runtime.id });
-    // Prevent url not being set
-    chrome.storage.sync.get(function (item) {
-        if (item.url == undefined)
-            chrome.storage.sync.set({ url: '' });
-    });
 });
 // Listen request
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -30,6 +25,23 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         sendResponse();
     }
 });
+/*// Popup
+chrome.action.onClicked.addListener(function () {
+    getLoginUrl().then(function (loginurl) {
+        chrome.tabs.create({ url: loginurl }, function (tab) {
+            injectJs(tab);
+        });
+    });
+});
+function injectJs(tab) {
+    if (tab.id) {
+        chrome.scripting.executeScript({
+            target: { tabId: tab.id, allFrames: true },
+            files: ["js/jquery-3.7.1.min.js", "js/autologin.js"],
+            world: "MAIN"
+        });
+    }
+}
 // Get url synchronously
 function getLoginUrl() {
     return new Promise(function (resolve) {
@@ -42,7 +54,7 @@ function getLoginUrl() {
                 resolve('https://github.com/MisakiBear/WebClass-Extension');
         });
     });
-}
+}*/
 // Execute the download request from contentsdownload.js
 function downloadfile(downloadmsg, sender) {
     var _a, _b, _c;

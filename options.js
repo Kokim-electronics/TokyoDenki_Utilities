@@ -67,7 +67,7 @@ function getNow() {
 }
 
 //https://www.rectus.co.jp/archives/2940
-document.getElementById("buttonEye").addEventListener("click", pushHideButton);
+/*document.getElementById("buttonEye").addEventListener("click", pushHideButton);
 function pushHideButton() {
   var txtPass = document.getElementById("uido_pass");
   var btnEye = document.getElementById("buttonEye");
@@ -77,5 +77,19 @@ function pushHideButton() {
   } else {
     txtPass.type = "text";
     btnEye.className = "fa fa-eye-slash";
+  }
+}*/
+document.getElementById("passwordbtn").addEventListener("click", pushHideButton2);
+function pushHideButton2() {
+  var txtPass = document.getElementById("uido_pass");
+  //var btnEye = document.getElementById("buttonEye");
+  if (txtPass.type === "text") {
+    txtPass.type = "password";
+    document.getElementById("passwordbtn").innerText = "PW表示";
+    //btnEye.className = "fa fa-eye";
+  } else {
+    txtPass.type = "text";
+    document.getElementById("passwordbtn").innerText = "PW非表示";
+    //btnEye.className = "fa fa-eye-slash";
   }
 }

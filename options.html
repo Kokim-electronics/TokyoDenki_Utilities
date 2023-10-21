@@ -6,9 +6,9 @@
     <title>WebClass Extension 設定</title>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <style>
-        #uido_pass {
-          border: none; /* デフォルトの枠線を消す */
-        }
+        /* #uido_pass {
+          border: none;デフォルトの枠線を消す */
+        */
         #fieldPassword {
           border-width: thin;
           border-style: solid;
@@ -22,10 +22,11 @@
         <fieldset>
             <legend>共通パスワード</legend>
             <input type="text" id="uido_id" name="uido_id" size="25" placeholder="99xx999@ms.dendai.ac.jp"><br>
-            <form id="fieldPassword">
-                <input type="password" id="uido_pass" name="uido_pass" size="22" placeholder="共通パスワード">
+            <input type="password" id="uido_pass" name="uido_pass" size="25" placeholder="共通パスワード"><br>
+            <!--<form id="fieldPassword">   
                 <span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
-            </form>
+            </form>-->
+            <button id="passwordbtn">PW表示</button>
         </fieldset>
         <br>
 
@@ -55,12 +56,13 @@
 
         <fieldset>
             <legend>UNIPA:履修済み科目の設定</legend>
-            <textarea id="kamokuary" name="example1" cols="50" rows="10" placeholder="科目名カンマ区切り"></textarea><br>
+            <textarea id="kamokuary" name="example1" cols="50" rows="15" placeholder="科目名カンマ区切り"></textarea><br>
         </fieldset>
+        <br>
         <button id="confirmbtn">確定</button>
         <label id="resultlb"></label>
     </p>
-    <script type="text/javascript" src="jquery-3.7.0.min.js"></script>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="options.js"></script>
 </body>
 </html>

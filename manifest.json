@@ -1,7 +1,7 @@
 ﻿{
     "name": "TokyoDenki_Utilities",
     "description": "An extension for TDU students",
-    "version": "0.6.1",
+    "version": "0.8.2",
     "manifest_version": 3,
     "homepage_url": "https://github.com/Kokim-electronics/TokyoDenki_Utilities",
     "permissions": [
@@ -45,7 +45,7 @@
     "content_scripts": [
         {
             "matches": ["https://els.sa.dendai.ac.jp/webclass/*"],
-            "js": ["jquery-3.7.0.min.js"],
+            "js": ["jquery-3.7.1.min.js"],
             "run_at": "document_start"
         },{
             "matches": [
@@ -80,7 +80,7 @@
         },{
             "matches": ["https://els.sa.dendai.ac.jp/webclass/login.php*"],
             "js": [
-                "jquery-3.7.0.min.js",
+                "jquery-3.7.1.min.js",
                 "WebClass/js/autologin.js"
             ]
         },{
@@ -96,7 +96,7 @@
             "exclude_matches": ["https://portal.sa.dendai.ac.jp/uprx/up/pk/pky001/Pky00101.xhtml"],
             "matches": ["https://portal.sa.dendai.ac.jp/*"],
             "js": [
-                "jquery-3.7.0.min.js",
+                "jquery-3.7.1.min.js",
                 "DENDAI_UNIPA/js/autologin.js",
                 "DENDAI_UNIPA/js/tt.js",
                 "DENDAI_UNIPA/js/bbs.js"
@@ -105,7 +105,7 @@
         },{
             "matches": ["https://portal.sa.dendai.ac.jp/uprx/up/pk/pky001/Pky00101.xhtml"],
             "js": [
-                "jquery-3.7.0.min.js",
+                "jquery-3.7.1.min.js",
                 "DENDAI_UNIPA/js/autologin.js",
                 "DENDAI_UNIPA/js/bbs2.js"
             ]

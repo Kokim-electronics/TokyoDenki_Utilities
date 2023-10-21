@@ -9,8 +9,7 @@
     display: none
 }
 
-/*シラバス検索：検索条件を指定*/
-/*
+/*シラバス検索：検索条件を指定
 .ui-radiobutton.ui-widget {
     display: none;
 }*/
@@ -30,6 +29,20 @@
     margin-left: 6em;
     margin-right: 15px;
 }
+.searchB {
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.searchB input:first-of-type{
+    margin-left: 5.8em;
+    margin-right: 2px;
+}
+.searchB button:first-of-type{
+    width: 3.5em;
+    margin-right: -3px;
+}
 .innerA {
     padding-top: 5px;
     display: flex;
@@ -44,12 +57,12 @@
     margin-left: 12px;
     width: 16em;
 }
-.inner3 {
+.SyllabusBtnHyoji {
     margin-left: 3px;
     /*width: 16.5em;*/
 }
 
-/* 教職 
+/* 教職 資格見込判定エラー
 #funcForm\:j_idt224\:j_idt225 {
     display: none;
 }*/
