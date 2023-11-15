@@ -1,4 +1,4 @@
-﻿## TokyoDenki_Utilities-v0.8.4
+﻿## TokyoDenki_Utilities-v0.8.5
 
 UNIPA，Box，図書サービス，Webclassの自動ログイン等を実装しました．  
 また，ポップアップから各ページへとアクセスしやすくしました．さらにポップアップから[Dentime](https://dentime.anozon.me)にアクセスできるようにしました．
@@ -12,6 +12,7 @@ v0.6.1からの変更点 - 授業時間割表中での科目検索機能追加�
 v0.7.0からの変更点 - ソースコードの全体的な見直し．  
 v0.8.0からの変更点 - 動作しない機能の確認と修正．  
 v0.8.2からの変更点 - レポート検知，backgroundの修正  
+v0.8.4からの変更点 - 動作しない機能の修正  
 
 ![拡張機能のピン止め](img/Screenshot02.png)
 
@@ -56,4 +57,4 @@ v0.8.2からの変更点 - レポート検知，backgroundの修正
 [BearOffice/WebClass-Extension](https://github.com/BearOffice/WebClass-Extension): ウェブクラス(WebClass)の利便性を向上できるChrome拡張機能．  
 [a01sa01to/WebClass-PreventDL](https://github.com/a01sa01to/WebClass-PreventDL):埼玉大学生向けChrome拡張機能．  
 
-最終更新日:2023/11/15 9:30
+最終更新日:2023/11/15 17:30

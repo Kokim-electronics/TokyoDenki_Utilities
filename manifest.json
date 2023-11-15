@@ -1,7 +1,7 @@
 ﻿{
     "name": "TokyoDenki_Utilities",
     "description": "An extension for TDU students",
-    "version": "0.8.4",
+    "version": "0.8.5",
     "manifest_version": 3,
     "homepage_url": "https://github.com/Kokim-electronics/TokyoDenki_Utilities",
     "permissions": [
@@ -71,7 +71,6 @@
         },{
             "matches": ["https://els.sa.dendai.ac.jp/webclass/course.php*"],
             "js": [
-                "WebClass/js/timetrigger.js",
                 "WebClass/js/reportalert.js",
                 "WebClass/js/course.js"
             ],

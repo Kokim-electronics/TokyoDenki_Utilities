@@ -24,6 +24,7 @@ var TimeTrigger = /** @class */ (function () {
 }());
 //# sourceMappingURL=timetrigger.js.map
 
+/*
 // background.jsから移行
 // Listen request
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -77,3 +78,4 @@ function clearTimeCheck() {
     repotrigger.clearTimeCheck();
 }
 //# sourceMappingURL=background.js.map
+*/

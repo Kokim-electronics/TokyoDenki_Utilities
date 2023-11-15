@@ -35,6 +35,33 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+
+//import {TimeTrigger} from "./timetrigger.js";
+var TimeTrigger = /** @class */ (function () {
+    function TimeTrigger(time) {
+        this.check = setTimeout(function () { }, 0);
+        this.single = true;
+        this.time = time;
+    }
+    TimeTrigger.prototype.timeCheck = function (func) {
+        var _this = this;
+        // Limit timecheck
+        if (this.single == false)
+            return;
+        this.single = false;
+        this.check = setTimeout(function () {
+            func();
+            _this.single = true;
+        }, this.time);
+    };
+    TimeTrigger.prototype.clearTimeCheck = function () {
+        clearTimeout(this.check);
+        this.single = true;
+    };
+    return TimeTrigger;
+}());
+//# sourceMappingURL=timetrigger.js.map
+
 $(window).on('load', function () {
     chrome.runtime.sendMessage({ type: 'reportstatus' }, function (response) {
         if (response.has == true)

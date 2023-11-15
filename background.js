@@ -1,10 +1,37 @@
 "use strict";
+
+//import { TimeTrigger } from "./timetrigger.js";
+var TimeTrigger = /** @class */ (function () {
+    function TimeTrigger(time) {
+        this.check = setTimeout(function () { }, 0);
+        this.single = true;
+        this.time = time;
+    }
+    TimeTrigger.prototype.timeCheck = function (func) {
+        var _this = this;
+        // Limit timecheck
+        if (this.single == false)
+            return;
+        this.single = false;
+        this.check = setTimeout(function () {
+            func();
+            _this.single = true;
+        }, this.time);
+    };
+    TimeTrigger.prototype.clearTimeCheck = function () {
+        clearTimeout(this.check);
+        this.single = true;
+    };
+    return TimeTrigger;
+}());
+//# sourceMappingURL=timetrigger.js.map
+
 // Initialize
 chrome.runtime.onInstalled.addListener(function () {
     chrome.tabs.create({ 'url': 'chrome://extensions/?options=' + chrome.runtime.id });
 });
+
 // Listen request
-/*
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.type == 'download') {
         downloadfile(request, sender);
@@ -25,6 +52,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         sendResponse();
     }
 });
+/*
 // Popup
 chrome.action.onClicked.addListener(function () {
     getLoginUrl().then(function (loginurl) {
@@ -55,6 +83,7 @@ function getLoginUrl() {
         });
     });
 }
+*/
 // Execute the download request from contentsdownload.js
 function downloadfile(downloadmsg, sender) {
     var _a, _b, _c;
@@ -85,4 +114,3 @@ function clearTimeCheck() {
     repotrigger.clearTimeCheck();
 }
 //# sourceMappingURL=background.js.map
-*/
