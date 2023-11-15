@@ -1,7 +1,7 @@
 ﻿{
     "name": "TokyoDenki_Utilities",
     "description": "An extension for TDU students",
-    "version": "0.8.2",
+    "version": "0.8.4",
     "manifest_version": 3,
     "homepage_url": "https://github.com/Kokim-electronics/TokyoDenki_Utilities",
     "permissions": [
@@ -37,10 +37,12 @@
         "https://www2.kyujin-navi.com/*"
     ],
     "options_ui": {
-        "page": "options.html"
+        "page": "options.html",
+        "browser_style": true
     },
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "background.js",
+        "type": "module"
     },
     "content_scripts": [
         {

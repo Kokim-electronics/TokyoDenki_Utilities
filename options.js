@@ -1,4 +1,4 @@
-﻿function saveurl() {
+﻿function saveurl() { // 入力から取得しchrome.storage.localに保存
   var value_id   = $('#uido_id').val();
   var value_pass = $('#uido_pass').val();
 
@@ -79,16 +79,16 @@ function pushHideButton() {
     btnEye.className = "fa fa-eye-slash";
   }
 }*/
-document.getElementById("passwordbtn").addEventListener("click", pushHideButton2);
-function pushHideButton2() {
+document.getElementById("passwordbtn").addEventListener("click", pushHideButton2); // パスワード表示ボタン
+function pushHideButton2() { // パスワード表示ボタン
   var txtPass = document.getElementById("uido_pass");
   //var btnEye = document.getElementById("buttonEye");
-  if (txtPass.type === "text") {
-    txtPass.type = "password";
+  if (txtPass.type === "text") { // textの場合
+    txtPass.type = "password"; // パスワードにする
     document.getElementById("passwordbtn").innerText = "PW表示";
     //btnEye.className = "fa fa-eye";
-  } else {
-    txtPass.type = "text";
+  } else { // passwordの場合
+    txtPass.type = "text"; // textにする
     document.getElementById("passwordbtn").innerText = "PW非表示";
     //btnEye.className = "fa fa-eye-slash";
   }

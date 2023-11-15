@@ -102,7 +102,7 @@ $('.course-webclass').html('WebClass&nbsp;&nbsp;' + egg[Math.floor(Math.random()
 //    'src=""></iframe></div>');
 //# sourceMappingURL=mainpage.js.map
 
-if(document.getElementsByClassName("page-header")[1]!=undefined){
+if(document.getElementsByClassName("page-header")[1] != undefined){ // 全休・時限の非表示 
 chrome.storage.local.get(function (item) {
   for (let n = 1; n < 8; n++){
     if (item.tf_period[n]) {

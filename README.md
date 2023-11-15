@@ -1,6 +1,7 @@
-﻿## TokyoDenki_Utilities-v0.8.2
+﻿## TokyoDenki_Utilities-v0.8.4
 
-UNIPA，Box，図書サービス，Webclassの自動ログイン等を実装しました．また，ポップアップから各ページへとアクセスしやすくしました．さらにポップアップから[Dentime](https://dentime.anozon.me)にアクセスできるようにしました．
+UNIPA，Box，図書サービス，Webclassの自動ログイン等を実装しました．  
+また，ポップアップから各ページへとアクセスしやすくしました．さらにポップアップから[Dentime](https://dentime.anozon.me)にアクセスできるようにしました．
 
 v0.3.0からの変更点 - Webclass，UNIPAでのパスワード誤り時の動作を追加，オプションページでの誤動作を修正．  
 v0.4.0からの変更点 - ポップアップの修正．  
@@ -10,6 +11,7 @@ v0.6.0からの変更点 - ソースコードの軽微な変更．
 v0.6.1からの変更点 - 授業時間割表中での科目検索機能追加．  
 v0.7.0からの変更点 - ソースコードの全体的な見直し．  
 v0.8.0からの変更点 - 動作しない機能の確認と修正．  
+v0.8.2からの変更点 - レポート検知，backgroundの修正  
 
 ![拡張機能のピン止め](img/Screenshot02.png)
 
@@ -39,19 +41,19 @@ v0.8.0からの変更点 - 動作しない機能の確認と修正．
 
 参考 : <br>[カスタムの Chrome アプリと拡張機能を作成して公開する - Chrome Enterprise and Education ヘルプ](https://support.google.com/chrome/a/answer/2714278?hl=ja)
 
-1. [TokyoDenki_Utilities](https://github.com/Kokim-electronics/TokyoDenki_Utilities/releases)から`Assets - TokyoDenki_Utilities-vx.x.x.zip`をDL
-2. 解凍し`TokyoDenki_Utilities`フォルダを`Users/Document`などに移動する
-3. `chrome://extensions/`，`edge://extensions/`へアクセス、デベロッパーモード(Chrome)オン
-4. `TokyoDenki_Utilities`フォルダ(manifest.jsonが入っているフォルダ以外はエラーを吐きます)をD&D
-5. 設定画面にて学籍番号と共通パスワードを設定
-6. 注意事項：学籍番号やパスワードを間違える回数が一定回数を超えるととUNIPAがアカウントの一時ロックが起こります．
-7. ブラウザ右上の拡張機能アイコンから本拡張機能をピン止め
-   ![拡張機能のピン止め](img/Screenshot01.png)
-   ![拡張機能のピン止め](img/Screenshot02.png)
+1. [TokyoDenki_Utilities](https://github.com/Kokim-electronics/TokyoDenki_Utilities/releases)から`Assets - TokyoDenki_Utilities-vx.x.x.zip`をDL  
+2. 解凍し`TokyoDenki_Utilities`フォルダを`Users/Document`などに移動する  
+3. `chrome://extensions/`，`edge://extensions/`へアクセス、デベロッパーモード(Chrome)オン  
+4. `TokyoDenki_Utilities`フォルダ(manifest.jsonが入っているフォルダ以外はエラーを吐きます)をD&D  
+5. 設定画面にて学籍番号と共通パスワードを設定  
+6. 注意事項：学籍番号やパスワードを間違える回数が一定回数を超えるととUNIPAがアカウントの一時ロックが起こります．  
+7. ブラウザ右上の拡張機能アイコンから本拡張機能をピン止め  
+   ![拡張機能のピン止め](img/Screenshot01.png)  
+   ![拡張機能のピン止め](img/Screenshot02.png)  
 
 
 ### Ⅲ.参考資料
-[BearOffice/WebClass-Extension](https://github.com/BearOffice/WebClass-Extension): ウェブクラス(WebClass)の利便性を向上できるChrome拡張機能． 
-[a01sa01to/WebClass-PreventDL](https://github.com/a01sa01to/WebClass-PreventDL):埼玉大学生向けChrome拡張機能． 
+[BearOffice/WebClass-Extension](https://github.com/BearOffice/WebClass-Extension): ウェブクラス(WebClass)の利便性を向上できるChrome拡張機能．  
+[a01sa01to/WebClass-PreventDL](https://github.com/a01sa01to/WebClass-PreventDL):埼玉大学生向けChrome拡張機能．  
 
-最終更新日:2023/10/21 13:10
+最終更新日:2023/11/15 9:30

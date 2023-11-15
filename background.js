@@ -1,10 +1,10 @@
-importScripts("WebClass/js/timetrigger.js");
 "use strict";
 // Initialize
 chrome.runtime.onInstalled.addListener(function () {
     chrome.tabs.create({ 'url': 'chrome://extensions/?options=' + chrome.runtime.id });
 });
 // Listen request
+/*
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.type == 'download') {
         downloadfile(request, sender);
@@ -25,7 +25,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         sendResponse();
     }
 });
-/*// Popup
+// Popup
 chrome.action.onClicked.addListener(function () {
     getLoginUrl().then(function (loginurl) {
         chrome.tabs.create({ url: loginurl }, function (tab) {
@@ -54,7 +54,7 @@ function getLoginUrl() {
                 resolve('https://github.com/MisakiBear/WebClass-Extension');
         });
     });
-}*/
+}
 // Execute the download request from contentsdownload.js
 function downloadfile(downloadmsg, sender) {
     var _a, _b, _c;
@@ -85,3 +85,4 @@ function clearTimeCheck() {
     repotrigger.clearTimeCheck();
 }
 //# sourceMappingURL=background.js.map
+*/
