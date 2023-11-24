@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -14,7 +14,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+        while (g && (g = 0, op[0] && (_ = 0)),_) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -120,7 +120,7 @@ function reportAlert() {
                             }
                             readMail();
                             errtrigger.clearTimeCheck();
-                            reportDetailMessage(reportName, reportTime, reportUrl);
+                            reportDetailMessage(reportName, /*reportTime*/mailtime, reportUrl);
                         });
                     });
                     return [2 /*return*/];
@@ -136,9 +136,10 @@ function lightCheck() {
     return true;
 }
 // -------- Check if the report is uploaded successfully(deep way) --------
+var mailtime;
 function DeepCheck(reportName, reportTime) {
     return __awaiter(this, void 0, void 0, function () {
-        var mailelem, mailtitle, mailtime, regex, maildatetime, reportdatetime;
+        var mailelem, mailtitle, /*mailtime,*/ regex, maildatetime, reportdatetime;
         return __generator(this, function (_a) {
             mailelem = $('.extmail').contents().find('#MsgListTable td[nowrap]');
             mailtitle = $('span', mailelem.eq(2)).text();
@@ -151,11 +152,16 @@ function DeepCheck(reportName, reportTime) {
                 return [2 /*return*/, false];
             maildatetime = Date.parse('20' + mailtime + ':00');
             reportdatetime = Date.parse(reportTime);
-            if ((maildatetime - reportdatetime) / (1000 * 60) > 3)
-                return [2 /*return*/, false];
-            if ((Date.now() - maildatetime) / (1000 * 60) > 10)
-                return [2 /*return*/, false];
-            return [2 /*return*/, true];
+            /*
+            console.log(maildatetime, reportdatetime)
+            console.log("(maildatetime - reportdatetime) / (1000 * 60)",(maildatetime - reportdatetime) / (1000 * 60))
+            console.log("(Date.now() - maildatetime) / (1000 * 60)",(Date.now() - maildatetime) / (1000 * 60))
+            */
+            //if ((maildatetime - reportdatetime) / (1000 * 60) > 3)
+            //    return [2 /*return*/, false];
+            //if ((Date.now() - maildatetime) / (1000 * 60) > 10)
+            //    return [2 /*return*/, false];
+                return [2 /*return*/, true];
         });
     });
 }

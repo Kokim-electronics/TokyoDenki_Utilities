@@ -1,4 +1,5 @@
-﻿function saveurl() { // 入力から取得しchrome.storage.localに保存
+﻿"use strict";
+function saveurl() { // 入力から取得しchrome.storage.localに保存
   var value_id   = $('#uido_id').val();
   var value_pass = $('#uido_pass').val();
 

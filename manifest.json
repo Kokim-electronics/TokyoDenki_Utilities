@@ -1,7 +1,7 @@
 ﻿{
     "name": "TokyoDenki_Utilities",
     "description": "An extension for TDU students",
-    "version": "0.8.5",
+    "version": "0.9.0",
     "manifest_version": 3,
     "homepage_url": "https://github.com/Kokim-electronics/TokyoDenki_Utilities",
     "permissions": [
@@ -121,6 +121,9 @@
         },{
             "matches": ["https://auth-wlc.ntwk.dendai.ac.jp/login.html*"],
             "js": ["ntwk_dendai/js/TDU_MRCL_WLAN.js"]
+        },{
+            "matches": ["https://d1fw-auth.ntwk.dendai.ac.jp/*"],
+            "js": ["ntwk_dendai/js/d1fw-auth.js"]
         },{
             "matches": ["https://prtlog2.prt2.ms.dendai.ac.jp/Login/*"],
             "js": ["prtlog2/js/prtlog2.js"]
