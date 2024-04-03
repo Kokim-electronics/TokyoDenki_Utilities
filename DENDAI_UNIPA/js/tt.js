@@ -1,247 +1,15 @@
-function jugyo_hidden(array, le) {
-    var fontB = document.getElementsByClassName('fontB');
-    var infodiv = document.querySelectorAll(".jugyo-info.jugyo-normal");
-    var bre;
-    var index;
-    var num;
-
-    for (index = 0; index < infodiv.length; index++) {
-        // 番号づけ 
-        infodiv[index].id = "jugyo-id" + index;
-
-        // クローン
-        var details_element = document.createElement('details');
-        var clone = document.querySelector(`#jugyo-id` + index).cloneNode(true);
-        var fontB_element = clone;
-
-        // 学生時間割と授業時間割の場合分け
-        var times;
-        if (textEnd.endsWith("学生時間割表")) {
-            times = 6;
-        } else {
-            times = 5;
-        }
-
-        // 子要素をコピー
-        for (num = 0; num < fontB_element.children.length + times; num += 1) {
-            if (fontB_element.children[0] === undefined) {
-                bre = true;
-                break;
-            }
-            details_element.appendChild(fontB_element.children[0]);
-            bre = false;
-        }
-        if (bre) {
-            continue;
-        }
-
-        // idとclassを追加
-        details_element.classList.add("jugyo-info", "jugyo-normal", "fontB-id" + index);
-        details_element.querySelector(`.fontB`).id = "fontB-id" + index;
-
-        // 書き換え
-        var infodiv2 = document.getElementById('jugyo-id' + index);
-        infodiv2.replaceWith(details_element);
-
-        /*==============================================================*/
-
-        clone = document.querySelector(`#fontB-id` + index).cloneNode(true);
-        fontB_element = document.createElement('summary');
-        fontB_element.append(clone.textContent);
-
-        for (num = 0; num < clone.className.split(' ').length; num++) {
-            fontB_element.classList.add(clone.className.split(' ')[num]);
-        }
-
-        var fontBdiv2 = document.querySelector('#fontB-id' + index);
-        fontBdiv2.replaceWith(fontB_element);
-    }
-
-
-    //===================================================
-    //非表示
-    for (index = 0; index < fontB.length; index++) {
-        for (var index2 = 0; index2 < /*array.*/le/*ngth*/; index2++) {
-            if (fontB[index].textContent.startsWith(array[index2])) {
-                fontB[index].parentNode.classList.add('delete_info');
-            }
-        }
-    }
-    //===================================================
-
-}
-
-function jugyo_search(array, le) {
-    var fontB = document.getElementsByClassName('fontB');
-    var infodiv = document.querySelectorAll(".jugyo-info.jugyo-normal");
-    var bre;
-    var index;
-    var num;
-
-    for (index = 0; index < infodiv.length; index++) {
-        // 番号づけ 
-        infodiv[index].id = "jugyo-id" + index;
-
-        // クローン
-        var details_element = document.createElement('details');
-        var clone = document.querySelector(`#jugyo-id` + index).cloneNode(true);
-        var fontB_element = clone;
-
-        // 学生時間割と授業時間割の場合分け
-        var times;
-        if (textEnd.endsWith("学生時間割表")) {
-            times = 6;
-        } else {
-            times = 5;
-        }
-
-        // 子要素をコピー
-        for (num = 0; num < fontB_element.children.length + times; num += 1) {
-            if (fontB_element.children[0] === undefined) {
-                bre = true;
-                break;
-            }
-            details_element.appendChild(fontB_element.children[0]);
-            bre = false;
-        }
-        if (bre) {
-            continue;
-        }
-
-        // idとclassを追加
-        details_element.classList.add("jugyo-info", "jugyo-normal", "fontB-id" + index);
-        details_element.querySelector(`.fontB`).id = "fontB-id" + index;
-
-        // 書き換え
-        var infodiv2 = document.getElementById('jugyo-id' + index);
-        infodiv2.replaceWith(details_element);
-
-        /*==============================================================*/
-
-        clone = document.querySelector(`#fontB-id` + index).cloneNode(true);
-        fontB_element = document.createElement('summary');
-        fontB_element.append(clone.textContent);
-
-        for (num = 0; num < clone.className.split(' ').length; num++) {
-            fontB_element.classList.add(clone.className.split(' ')[num]);
-        }
-
-        var fontBdiv2 = document.querySelector('#fontB-id' + index);
-        fontBdiv2.replaceWith(fontB_element);
-    }
-
-
-    //===================================================
-    //非表示
-    for (index = 0; index < fontB.length; index++) {
-        for (var index2 = 0; index2 < /*array.*/le/*ngth*/; index2++) {
-            //console.log(array[index2], fontB[index].textContent);
-            if (fontB[index].textContent.includes(array[index2])) {
-                fontB[index].parentNode.classList.remove('delete_info');
-                break;
-            }
-            else {
-                fontB[index].parentNode.classList.add('delete_info');
-            }
-        }
-    }
-    //===================================================
-
-}
-
-function jugyo_all() {
-    var fontB = document.getElementsByClassName('fontB');
-    var infodiv = document.querySelectorAll(".jugyo-info.jugyo-normal");
-    var bre;
-    var index;
-    var num;
-
-    for (index = 0; index < infodiv.length; index++) {
-        // 番号づけ
-        infodiv[index].id = "jugyo-id" + index;
-
-        // クローン
-        var details_element = document.createElement('details');
-        var clone = document.querySelector(`#jugyo-id` + index).cloneNode(true);
-        var fontB_element = clone;
-
-        // 学生時間割と授業時間割の場合分け
-        var times;
-        if (textEnd.endsWith("学生時間割表")) {
-            times = 6;
-        } else {
-            times = 5;
-        }
-
-        // 子要素をコピー
-        for (num = 0; num < fontB_element.children.length + times; num += 1) {
-            if (fontB_element.children[0] === undefined) {
-                bre = true;
-                break;
-            }
-            details_element.appendChild(fontB_element.children[0]);
-            bre = false;
-        }
-        if (bre) {
-            continue;
-        }
-
-        // idとclassを追加
-        details_element.classList.add("jugyo-info", "jugyo-normal", "fontB-id" + index);
-        details_element.querySelector(`.fontB`).id = "fontB-id" + index;
-
-        // 書き換え
-        var infodiv2 = document.getElementById('jugyo-id' + index);
-        infodiv2.replaceWith(details_element);
-
-        /*==============================================================*/
-
-        clone = document.querySelector(`#fontB-id` + index).cloneNode(true);
-        fontB_element = document.createElement('summary');
-        fontB_element.append(clone.textContent);
-
-        for (num = 0; num < clone.className.split(' ').length; num++) {
-            fontB_element.classList.add(clone.className.split(' ')[num]);
-        }
-
-        var fontBdiv2 = document.querySelector('#fontB-id' + index);
-        fontBdiv2.replaceWith(fontB_element);
-    }
-}
-
-function main3() {
-    chrome.storage.local.get(function (item) {
-        var array = item.kamoku
-        var le = array.length;
-        jugyo_hidden(array, le);
-    });
-}
-
-function search() {
-    var arr_kamoku
-    if (document.querySelector("input[type=text]").value.length == 0) {
-        arr_kamoku = ""
-    } else {
-        arr_kamoku = document.querySelector("input[type=text]").value.split(',');
-    }
-    jugyo_search(arr_kamoku, arr_kamoku.length);
-}
-
-function btn33() {
-    document.getElementById('funcForm:search').click();
-    setTimeout(function () { main3(); }, 1500);
-
-}
-
-function btn35() {
-    if (document.getElementById('funcForm:j_idt172:1').checked) {
-        document.getElementById('funcForm:j_idt266').click();
-    }
-}
-
 // 初期実行===========================================
 var textEnd;
 var boxes;
+var bre;
+var index;
+var num;
+var fontB = "";
+var infodiv = "";
+var details_element;
+var clone;
+var fontB_element;
+var first_flag = true;
 
 for (var n = 25; n <= 100; n++) {
     var texthold = document.querySelectorAll("span[class=ui-menuitem-text]")[n];
@@ -258,16 +26,151 @@ for (var n = 25; n <= 100; n++) {
     }
 }
 
-main3();
+let times = 10;
+if (textEnd.endsWith("学生時間割表")) {
+    times = 6;
+}
+if (textEnd.endsWith("時間割表")) {
+    numbering();
+    main3();
+}
 // 初期実行===========================================
+
+function numbering() {
+    fontB = document.getElementsByClassName('fontB');
+    infodiv = document.querySelectorAll(".jugyo-info.jugyo-normal");
+    for (index = 0; index < infodiv.length; index++) {
+        infodiv[index].id = "jugyo-id" + index;
+    }
+}
+
+function jugyo_hidden(array, le) {
+    if (first_flag) {
+        for (index = 0; index < infodiv.length; index++) {
+            // クローン
+            details_element = document.createElement('details');
+            clone = document.querySelector(`#jugyo-id` + index).cloneNode(true);
+            fontB_element = clone;
+
+            // 子要素をコピー
+            for (num = 0; num < fontB_element.children.length + times; num += 1) {
+                if (fontB_element.children[0] === undefined) {
+                    bre = true;
+                    break;
+                }
+                details_element.appendChild(fontB_element.children[0]);
+                bre = false;
+            }
+            if (bre) {
+                //continue;
+            }
+
+            // idとclassを追加
+            details_element.classList.add("jugyo-info", "jugyo-normal", "fontB-id" + index);
+            details_element.querySelector(`.fontB`).id = "fontB-id" + index;
+
+            // 書き換え
+            var infodiv2 = document.getElementById('jugyo-id' + index);
+            infodiv2.replaceWith(details_element);
+
+            /*==============================================================*/
+
+            clone = document.querySelector(`#fontB-id` + index).cloneNode(true);
+            fontB_element = document.createElement('summary');
+            fontB_element.append(clone.textContent);
+
+            for (num = 0; num < clone.className.split(' ').length; num++) {
+                fontB_element.classList.add(clone.className.split(' ')[num]);
+            }
+
+            var fontBdiv2 = document.querySelector('#fontB-id' + index);
+            fontBdiv2.replaceWith(fontB_element);
+        }
+        first_flag = false;
+    }
+
+    //===================================================
+    //非表示
+    for (index = 0; index < fontB.length; index++) {
+        fontB[index].parentNode.classList.remove('delete_info')
+        for (var index2 = 0; index2 < /*array.*/le/*ngth*/; index2++) {
+            if (fontB[index].textContent.startsWith(array[index2])) {
+                fontB[index].parentNode.classList.add('delete_info');
+            }
+        }
+    }
+    //===================================================
+
+    // 番号づけ
+    numbering();
+}
+
+function jugyo_search(array, le) {
+    //===================================================
+    //検索
+    for (index = 0; index < fontB.length; index++) {
+        fontB[index].parentNode.classList.remove('delete_info')
+        for (var index2 = 0; index2 < le; index2++) {
+            if (fontB[index].textContent.includes(array[index2])) {
+                fontB[index].parentNode.classList.remove('delete_info');
+                break;
+            } else {
+                fontB[index].parentNode.classList.add('delete_info');
+            }
+        }
+    }
+    //===================================================
+
+    // 番号づけ
+    numbering();
+}
+
+function jugyo_all(array, le) {
+    //===================================================
+    //再表示
+    for (index = 0; index < fontB.length; index++) {
+        fontB[index].parentNode.classList.remove('delete_info')
+    }
+    //===================================================
+    // 番号づけ
+    numbering();
+}
+
+function main3() {
+    chrome.storage.local.get(function (item) {
+        var array = item.kamoku
+        var le = array.length;
+        jugyo_hidden(array, le);
+    });
+}
+
+function search() {
+    var arr_kamoku = [];
+    if (document.querySelector("input[type=text]").value.length != 0) {
+        arr_kamoku = document.querySelector("input[type=text]").value.split(',');
+    }
+    jugyo_search(arr_kamoku, arr_kamoku.length);
+}
+
+function btn33() {
+    document.getElementById('funcForm:search').click();
+    setTimeout(function () { numbering(); first_flag = true; main3(); }, 1500);
+
+}
+
+function btn35() {
+    if (document.getElementById('funcForm:j_idt172:1').checked) {
+        document.getElementById('funcForm:j_idt266').click();
+    }
+}
 
 // 後期==============================================
 var today = new Date();
-    if ((9 <= (today.getMonth()+1)) &&textEnd.endsWith("学生時間割表")) {
-        if (document.querySelectorAll("div[class=ofAuto]")[0] != undefined){
-            document.querySelectorAll("div[class=ofAuto]")[0].classList.add("delete_info");
-        }
+if ((9 <= (today.getMonth() + 1)) && textEnd.endsWith("学生時間割表")) {
+    if (document.querySelectorAll("div[class=ofAuto]")[0] != undefined) {
+        document.querySelectorAll("div[class=ofAuto]")[0].classList.add("delete_info");
     }
+}
 // 後期==============================================
 
 // ボタン作成=========================================

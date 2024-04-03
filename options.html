@@ -2,67 +2,68 @@
 <html lang="jp">
 
 <head>
-    <meta charset="UTF-8">
-    <title>WebClass Extension 設定</title>
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <style>
-        /* #uido_pass {
+  <meta charset="UTF-8">
+  <title>WebClass Extension 設定</title>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <style>
+    /* #uido_pass {
           border: none;デフォルトの枠線を消す */
-        */
-        #fieldPassword {
-          border-width: thin;
-          border-style: solid;
-          width: 210px;
-        }
-      </style>
+    */ #fieldPassword {
+      border-width: thin;
+      border-style: solid;
+      width: 210px;
+    }
+  </style>
 </head>
 
 <body>
-    <p>
-        <fieldset>
-            <legend>共通パスワード</legend>
-            <input type="text" id="uido_id" name="uido_id" size="25" placeholder="99xx999@ms.dendai.ac.jp"><br>
-            <input type="password" id="uido_pass" name="uido_pass" size="25" placeholder="共通パスワード"><br>
-            <!--<form id="fieldPassword">   
+  <p>
+  <fieldset>
+    <legend>共通パスワード</legend>
+    <input type="text" id="mail" name="mail" size="25" placeholder="99xx999@ms.dendai.ac.jp"><br>
+    <input type="password" id="uido_pass" name="uido_pass" size="25" placeholder="共通パスワード"><br>
+    <!--<input type="password" id="key" name="key" size="25" placeholder="AES暗号化キー"><br>-->
+    <!--<form id="fieldPassword">   
                 <span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
             </form>-->
-            <button id="passwordbtn">PW表示</button>
-        </fieldset>
-        <br>
+    <button id="passwordbtn">PW表示</button>
+  </fieldset>
+  <br>
 
-        <fieldset>
-            <legend>Webclass:非表示にする時限を選択</legend>
+  <fieldset>
+    <legend>Webclass:非表示にする時限を選択</legend>
 
-            <input type="checkbox" id="period1" name="period1">         <label for="period1">1限</label>
-            <input type="checkbox" id="period2" name="period2">         <label for="period2">2限</label>
-            <input type="checkbox" id="period3" name="period3">         <label for="period3">3限</label>
-            <input type="checkbox" id="period4" name="period4">         <label for="period4">4限</label>
-            <input type="checkbox" id="period5" name="period5">         <label for="period5">5限</label>
-            <input type="checkbox" id="period6" name="period6" checked> <label for="period6">N6限</label>
-            <input type="checkbox" id="period7" name="period7" checked> <label for="period7">N7限</label>
-        </fieldset>
-        <fieldset>
-            <legend>Webclass:全休の曜日を選択</legend>
-            <div>
-                <input type="checkbox" id="date1" name="date1">         <label for="date1">月曜</label>
-                <input type="checkbox" id="date2" name="date2">         <label for="date2">火曜</label>
-                <input type="checkbox" id="date3" name="date3">         <label for="date3">水曜</label>
-                <input type="checkbox" id="date4" name="date4">         <label for="date4">木曜</label>
-                <input type="checkbox" id="date5" name="date5">         <label for="date5">金曜</label>
-                <input type="checkbox" id="date6" name="date6" checked> <label for="date6">土曜</label>
-            </div>
-        </fieldset>
-        <br>
+    <input type="checkbox" id="period1" name="period1"> <label for="period1">1限</label>
+    <input type="checkbox" id="period2" name="period2"> <label for="period2">2限</label>
+    <input type="checkbox" id="period3" name="period3"> <label for="period3">3限</label>
+    <input type="checkbox" id="period4" name="period4"> <label for="period4">4限</label>
+    <input type="checkbox" id="period5" name="period5"> <label for="period5">5限</label>
+    <input type="checkbox" id="period6" name="period6" checked> <label for="period6">N6限</label>
+    <input type="checkbox" id="period7" name="period7" checked> <label for="period7">N7限</label>
+  </fieldset>
+  <fieldset>
+    <legend>Webclass:全休の曜日を選択</legend>
+    <div>
+      <input type="checkbox" id="date1" name="date1"> <label for="date1">月曜</label>
+      <input type="checkbox" id="date2" name="date2"> <label for="date2">火曜</label>
+      <input type="checkbox" id="date3" name="date3"> <label for="date3">水曜</label>
+      <input type="checkbox" id="date4" name="date4"> <label for="date4">木曜</label>
+      <input type="checkbox" id="date5" name="date5"> <label for="date5">金曜</label>
+      <input type="checkbox" id="date6" name="date6" checked> <label for="date6">土曜</label>
+    </div>
+  </fieldset>
+  <br>
 
-        <fieldset>
-            <legend>UNIPA:履修済み科目の設定</legend>
-            <textarea id="kamokuary" name="example1" cols="50" rows="15" placeholder="科目名カンマ区切り"></textarea><br>
-        </fieldset>
-        <br>
-        <button id="confirmbtn">確定</button>
-        <label id="resultlb"></label>
-    </p>
-    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="options.js"></script>
+  <fieldset>
+    <legend>UNIPA:履修済み科目の設定</legend>
+    <textarea id="kamokuary" name="example1" cols="50" rows="15" placeholder="科目名カンマ区切り"></textarea><br>
+  </fieldset>
+  <br>
+  <button id="confirmbtn">確定</button>
+  <label id="resultlb"></label>
+  </p>
+  <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+  <script src="crypto-js.min.js"></script>
+  <script type="text/javascript" src="options.js"></script>
 </body>
 </html>

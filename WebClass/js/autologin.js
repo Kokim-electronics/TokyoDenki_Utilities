@@ -15,14 +15,13 @@ $(window).on('load', function () {
 */
 //# sourceMappingURL=autologin.js.map
 
-chrome.storage.local.get(function (item) {
-    document.getElementById("username").value = item.uido_id.substr(0, item.uido_id.indexOf('@'));  // Get the ID before '@' and insert it into the input box.
-    document.getElementById("password").value = item.uido_pass;  // Get password and insert it into the input box.
+(async function() {
+    document.getElementById("username").value = await smail()  // Get the ID before '@' and insert it into the input box.
+    document.getElementById("password").value = await decryption() // Get password and insert it into the input box.
     if (document.querySelectorAll(".alert.alert-warning")[0] == undefined){  // If there is no warning message, click the login button.
         document.getElementById("LoginBtn").click();  // Click the login button.
     }
     else { // If there is a warning message, alert the user to login manually.
        alert("【拡張機能のエラー】\nログインに失敗しました。\n拡張機能のオプションを確認した後，手動でログインしてください。"); // Alert the user to login manually.
     }
-    
-});
+}());

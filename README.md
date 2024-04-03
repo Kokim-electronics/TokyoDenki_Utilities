@@ -1,10 +1,10 @@
-﻿## TokyoDenki_Utilities-v0.9.0
+﻿## TokyoDenki_Utilities-v1.0.0
 
 UNIPA，Box，図書サービス，Webclassの自動ログイン等を実装しました．  
 また，ポップアップから各ページへとアクセスしやすくしました．さらにポップアップから[Dentime](https://dentime.anozon.me)にアクセスできるようにしました．
 
 <details>
-<summary>v0.8.0以前の変更点</summary>
+<summary>v0.8.5以前の変更点</summary>
 v0.3.0からの変更点 - Webclass，UNIPAでのパスワード誤り時の動作を追加，オプションページでの誤動作を修正．<br>
 v0.4.0からの変更点 - ポップアップの修正．<br>
 v0.4.1からの変更点 - 求人ナビ，プリントサービス，無線LANに対応．<br>
@@ -12,12 +12,14 @@ v0.5.0からの変更点 - ポップアップの修正．<br>
 v0.6.0からの変更点 - ソースコードの軽微な変更．<br>
 v0.6.1からの変更点 - 授業時間割表中での科目検索機能追加．<br>
 v0.7.0からの変更点 - ソースコードの全体的な見直し．<br>
+v0.8.0からの変更点 - 動作しない機能の確認と修正．<br>
+v0.8.2からの変更点 - レポート検知，backgroundの修正．<br>
+v0.8.4からの変更点 - 動作しない機能の修正<br>
 </details>
 
-v0.8.0からの変更点 - 動作しない機能の確認と修正．  
-v0.8.2からの変更点 - レポート検知，backgroundの修正．    
-v0.8.4からの変更点 - 動作しない機能の修正  
 v0.8.5からの変更点 - レポート検知と自動既読の修正  
+v0.9.0からの変更点 - 共通パスワードの暗号化保存実装・その他不要コメントアウトの削除
+v0.10.0からの変更点 - 全体的なソースコードの見直し，パス空欄時の動作追加
 <br>
   
 ![拡張機能のピン止め](img/Screenshot02.png)
@@ -26,10 +28,11 @@ v0.8.5からの変更点 - レポート検知と自動既読の修正
 1. UNIPA 
     1. 自動ログイン（タイムアウト時にも一部対応）
     2. 掲示板の初期表示を未読タブに変更
-    3. 時間割から任意の科目を非表示にすることが可能<br>
+    3. 授業時間割での検索機能
+    4. 時間割から任意の科目を非表示にすることが可能<br>
    <img src="img/Screenshot03.png" width="600">
 
-2. Box，図書サービス，求人検索ナビ，無線LAN
+2. Box，図書サービス，求人検索ナビ，無線LAN,webプリント
     1. ログインまでの操作を省略化
 3. WebClass
     1. BearOfficeさんの[WebClass-Extension](https://github.com/BearOffice/WebClass-Extension)を元に改良
@@ -63,4 +66,4 @@ v0.8.5からの変更点 - レポート検知と自動既読の修正
 [BearOffice/WebClass-Extension](https://github.com/BearOffice/WebClass-Extension): ウェブクラス(WebClass)の利便性を向上できるChrome拡張機能．  
 [a01sa01to/WebClass-PreventDL](https://github.com/a01sa01to/WebClass-PreventDL):埼玉大学生向けChrome拡張機能．  
 
-最終更新日:2023/11/24 13:40
+最終更新日:2024/4/3 18:30

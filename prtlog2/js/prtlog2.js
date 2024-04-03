@@ -1,7 +1,7 @@
-chrome.storage.local.get(function (item) {
+(async function() {
     if (document.getElementById("Username") != undefined) {
-        document.getElementById("Username").value = item.uido_id.substr(0, item.uido_id.indexOf('@')).toLowerCase();
-        document.getElementById("Password").value = item.uido_pass;
+        document.getElementById("Username").value = await smail();
+        document.getElementById("Password").value = await decryption();
         if (document.getElementById("um-auth-dialog-message") == null){
             document.getElementById("um-login-submit").click();
         }
@@ -9,4 +9,4 @@ chrome.storage.local.get(function (item) {
             alert("【拡張機能のエラー】\nログインに失敗しました。\n拡張機能のオプションを確認した後，手動でログインしてください。");
         }
     }
-});
+}());

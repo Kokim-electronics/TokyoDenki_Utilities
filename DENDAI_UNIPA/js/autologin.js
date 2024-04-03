@@ -1,7 +1,7 @@
-﻿chrome.storage.local.get(function (item) {
+﻿(async function() {
     if (document.getElementById("loginForm:userId") != undefined) {
-        document.getElementById("loginForm:userId").value = item.uido_id.substr(0, item.uido_id.indexOf('@')).toLowerCase();
-        document.getElementById("loginForm:password").value = item.uido_pass;
+        document.getElementById("loginForm:userId").value = await smail();
+        document.getElementById("loginForm:password").value = await decryption();
         if (document.getElementsByClassName("ui-messages-error-detail")[0] == undefined){
             document.getElementById("loginForm:loginButton").click();
         }
@@ -9,7 +9,7 @@
             alert("【拡張機能のエラー】\nログインに失敗しました。\n拡張機能のオプションを確認した後，手動でログインしてください。");
         }
     }
-});
+}());
 
 if (document.getElementsByClassName("innerInfo")[0] != undefined) {
     if (document.getElementsByClassName("innerInfo")[0].innerText.startsWith('長時間操作が行われなかったため')){

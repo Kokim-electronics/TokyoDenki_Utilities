@@ -37,7 +37,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 
 //import {TimeTrigger} from "./timetrigger.js";
-var TimeTrigger = /** @class */ (function () {
+
+//var TimeTrigger = /** @class */ (function () {
+/*
     function TimeTrigger(time) {
         this.check = setTimeout(function () { }, 0);
         this.single = true;
@@ -61,6 +63,7 @@ var TimeTrigger = /** @class */ (function () {
     return TimeTrigger;
 }());
 //# sourceMappingURL=timetrigger.js.map
+*/
 
 $(window).on('load', function () {
     chrome.runtime.sendMessage({ type: 'reportstatus' }, function (response) {

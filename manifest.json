@@ -1,7 +1,7 @@
 ﻿{
     "name": "TokyoDenki_Utilities",
     "description": "An extension for TDU students",
-    "version": "0.9.0",
+    "version": "1.0.0",
     "manifest_version": 3,
     "homepage_url": "https://github.com/Kokim-electronics/TokyoDenki_Utilities",
     "permissions": [
@@ -47,6 +47,7 @@
     "content_scripts": [
         {
             "matches": ["https://els.sa.dendai.ac.jp/webclass/*"],
+            "exclude_matches": ["https://els.sa.dendai.ac.jp/webclass/course.php/*/scores?*"],
             "js": ["jquery-3.7.1.min.js"],
             "run_at": "document_start"
         },{
@@ -71,6 +72,7 @@
         },{
             "matches": ["https://els.sa.dendai.ac.jp/webclass/course.php*"],
             "js": [
+                "webclass/js/timetrigger.js",
                 "WebClass/js/reportalert.js",
                 "WebClass/js/course.js"
             ],
@@ -82,22 +84,27 @@
             "matches": ["https://els.sa.dendai.ac.jp/webclass/login.php*"],
             "js": [
                 "jquery-3.7.1.min.js",
+                "crypto-js.min.js",
+                "decryption.js",
                 "WebClass/js/autologin.js"
             ]
         },{
             "matches": ["https://tdu.account.box.com/login*"],
             "js": ["TDU_Box/js/login.js"]
         },{
-            "matches": ["https://5683963776.swivelcloud.com/sentry/saml20endpoint"],
-            "js": ["TDU_Box/js/saml20endpoint.js"]
-        },{
-            "matches": ["https://5683963776.swivelcloud.com/sentry/usernameSubmission"],
-            "js": ["TDU_Box/js/usernameSubmission.js"]
+            "matches": ["https://5683963776.swivelcloud.com/sentry/*"],
+            "js": [
+                "crypto-js.min.js",
+                "decryption.js",
+                "TDU_Box/js/swivelcloud.js"
+            ]
         },{
             "exclude_matches": ["https://portal.sa.dendai.ac.jp/uprx/up/pk/pky001/Pky00101.xhtml"],
             "matches": ["https://portal.sa.dendai.ac.jp/*"],
             "js": [
                 "jquery-3.7.1.min.js",
+                "crypto-js.min.js",
+                "decryption.js",
                 "DENDAI_UNIPA/js/autologin.js",
                 "DENDAI_UNIPA/js/tt.js",
                 "DENDAI_UNIPA/js/bbs.js"
@@ -107,29 +114,50 @@
             "matches": ["https://portal.sa.dendai.ac.jp/uprx/up/pk/pky001/Pky00101.xhtml"],
             "js": [
                 "jquery-3.7.1.min.js",
+                "crypto-js.min.js",
+                "decryption.js",
                 "DENDAI_UNIPA/js/autologin.js",
                 "DENDAI_UNIPA/js/bbs2.js"
             ]
         },{
             "matches": ["https://*.mrcl.dendai.ac.jp/*"],
-            "js": ["tdu_lib/js/login-do.js"]
-        },
-        {
+            "js": [
+                "crypto-js.min.js",
+                "decryption.js",
+                "tdu_lib/js/login-do.js"
+            ]
+        },{
             "matches": ["https://dentime.anozon.me/*"],
             "css": ["dentime/dentime.css"],
             "js": ["dentime/dentime.js"]
         },{
             "matches": ["https://auth-wlc.ntwk.dendai.ac.jp/login.html*"],
-            "js": ["ntwk_dendai/js/TDU_MRCL_WLAN.js"]
+            "js": [
+                "crypto-js.min.js",
+                "decryption.js",
+                "ntwk_dendai/js/TDU_MRCL_WLAN.js"
+            ]
         },{
             "matches": ["https://d1fw-auth.ntwk.dendai.ac.jp/*"],
-            "js": ["ntwk_dendai/js/d1fw-auth.js"]
+            "js": [
+                "crypto-js.min.js",
+                "decryption.js",
+                "ntwk_dendai/js/d1fw-auth.js"
+            ]
         },{
             "matches": ["https://prtlog2.prt2.ms.dendai.ac.jp/Login/*"],
-            "js": ["prtlog2/js/prtlog2.js"]
+            "js": [
+                "crypto-js.min.js",
+                "decryption.js",
+                "prtlog2/js/prtlog2.js"
+            ]
         },{
             "matches": ["https://www2.kyujin-navi.com/GAKUGAI/*"],
-            "js": ["kyujin-navi/js/kyujin-navi.js"]
+            "js": [
+                "crypto-js.min.js",
+                "decryption.js",                
+                "kyujin-navi/js/kyujin-navi.js"
+            ]
         }
     ]
 }

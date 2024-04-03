@@ -1,29 +1,22 @@
-﻿var element = document.querySelectorAll("input[name=userid]");
-if (element[0] != undefined) {
-    element[0].id = "userid";
-    chrome.storage.local.get(
-        ['uido_id'],
-        function (value_id) {
-            var myID = value_id.uido_id.substr(0, value_id.uido_id.indexOf('@'));
-            document.getElementById("userid").value = myID;
-        }
-    );
+﻿var element = new Array(3);
+
+element[0] = document.querySelectorAll("input[name=userid]");
+if (element[0][0] != undefined) {
+    element[0][0].id = "userid";
 }
 
-element = document.querySelectorAll("input[type=password]");
-if (element[0] != undefined) {
-    element[0].id = "pass";
-    chrome.storage.local.get(
-        ['uido_pass'],
-        function (value_pass) {
-            var mypass = value_pass.uido_pass
-            document.getElementById("pass").value = String(mypass);
-            document.querySelectorAll("input[type=image]")[0].click();
-        }
-    );
+element[1] = document.querySelectorAll("input[type=password]");
+if (element[1][0] != undefined) {
+    element[1][0].id = "pass";
 }
 
-element = document.getElementsByClassName("show_center");
-if (element[0] != undefined) {
-    element[0].click();
+element[2] = document.getElementsByClassName("show_center");
+if (element[2][0] != undefined) {
+    element[2][0].click();
 }
+
+(async function() {
+    document.getElementById("userid").value = await smail();
+    document.getElementById("pass").value = await decryption();
+    document.querySelectorAll("input[type=image]")[0].click();
+}());

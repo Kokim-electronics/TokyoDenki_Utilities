@@ -1,6 +1,6 @@
 ﻿if(String(location.href).endsWith("p/tdu")){
   chrome.storage.local.get(function (item) {
-    var str = item.uido_id
+    var str = item.mail
     var date = new Date();
     var dayOfWeek = date.getDay();
     var popp = "https://www.google.com";
